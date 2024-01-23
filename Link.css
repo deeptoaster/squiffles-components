@@ -1,20 +1,25 @@
 .overlay-enter a,
+.overlay-enter button.button-link.button-link,
 .overlay-exit-active a,
+.overlay-exit-active button.button-link.button-link,
 .stage-appear a,
+.stage-appear button.button-link.button-link,
 .stage-enter a,
-.stage-exit-active a {
+.stage-enter button.button-link.button-link,
+.stage-exit-active a,
+.stage-exit-active button.button-link.button-link {
   color: transparent;
   transition: color 200ms;
 }
 a,
-.overlay-enter-active a,
-.stage-appear-active a,
-.stage-enter-active a,
-.card-enter-active a,
 button.button-link.button-link,
+.overlay-enter-active a,
 .overlay-enter-active button.button-link.button-link,
+.stage-appear-active a,
 .stage-appear-active button.button-link.button-link,
+.stage-enter-active a,
 .stage-enter-active button.button-link.button-link,
+.card-enter-active a,
 .card-enter-active button.button-link.button-link {
   color: var(--color-text-link);
   text-decoration: none;

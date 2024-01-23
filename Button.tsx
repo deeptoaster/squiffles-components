@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 import classNames from 'classnames';
 
-import { ClickableProps, SpreadableClickableProps } from '../defs';
+import { ClickableProps, SpreadableClickableProps } from './types';
 
 import './Button.css';
 

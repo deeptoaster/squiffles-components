@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { ClickableProps, SpreadableClickableProps } from '../defs';
+import { ClickableProps, SpreadableClickableProps } from './types';
 
 import './Link.css';
 

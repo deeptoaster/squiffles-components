@@ -1,0 +1,32 @@
+footer.stage-enter {
+  box-shadow: none;
+  color: transparent;
+  text-shadow: none;
+  transition:
+    box-shadow 200ms,
+    color 200ms,
+    text-shadow 200ms;
+}
+footer,
+footer.stage-enter-active {
+  box-shadow:
+    -0.05em -0.05em var(--color-specular),
+    -0.5em -0.5em 2em var(--color-highlight),
+    0.05em 0.05em var(--color-shadow),
+    0.5em 0.5em 2em var(--color-shadow);
+  color: inherit;
+  text-shadow:
+    -0.05em -0.05em 0.05em var(--color-specular),
+    0.05em 0.05em 0.05em var(--color-shadow);
+  transition:
+    box-shadow 400ms 400ms,
+    color 400ms 600ms,
+    text-shadow 400ms 600ms;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 2em;
+}

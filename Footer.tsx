@@ -7,10 +7,10 @@ import './Footer.css';
 
 export default function Footer(props: {
   children: React.ReactNode;
-  error: Error | null;
+  error?: Error | null;
   visible?: boolean;
 }): JSX.Element {
-  const { children, error, visible = true } = props;
+  const { children, error = null, visible = true } = props;
 
   return (
     <TransitionGroup component={null}>

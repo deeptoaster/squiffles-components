@@ -1,12 +1,24 @@
 import * as React from 'react';
+import classNames from 'classnames';
 
 import './Card.css';
 
 export default function Card(props: {
   children: React.ReactNode;
-  className?: string;
+  padded?: boolean;
+  width?: 20 | 30 | null;
 }): JSX.Element {
-  const { children, className } = props;
+  const { children, padded = true, width = null } = props;
 
-  return <article className={className}>{children}</article>;
+  return (
+    <article
+      className={classNames({
+        'card-no-padding': !padded,
+        'card-width-20': width === 20,
+        'card-width-30': width === 30
+      })}
+    >
+      {children}
+    </article>
+  );
 }

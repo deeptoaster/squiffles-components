@@ -1,7 +1,7 @@
 import { MouseEvent, ReactNode } from 'react';
 
 type ButtonClickableProps = {
-  readonly onClick: (event: MouseEvent) => void;
+  readonly onClick?: (event: MouseEvent) => void;
 };
 
 export type ClickableProps = CommonClickableProps &

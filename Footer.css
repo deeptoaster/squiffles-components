@@ -1,3 +1,30 @@
+.error.error-enter,
+.error.error-exit-active {
+  opacity: 0;
+  transform: scale(0.85);
+}
+.error,
+.error.error-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    opacity 300ms,
+    transform 300ms;
+}
+.error {
+  position: absolute;
+  bottom: 3em;
+  box-shadow:
+    0 0 0.2em var(--color-background-error),
+    0.75em 0.75em 3em var(--color-shadow);
+  max-width: 80%;
+  padding: 1em 2em;
+  background-color: var(--color-background-error);
+  color: var(--color-text-error);
+  text-align: center;
+  font-weight: bold;
+  z-index: 1;
+}
 footer.stage-enter {
   box-shadow: none;
   color: transparent;

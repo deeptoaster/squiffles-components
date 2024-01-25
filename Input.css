@@ -12,21 +12,21 @@
   flex: 1;
   padding: 0 0.75em;
 }
-.input-group input {
+.input-group input[type='text'] {
   margin: 0 -0.5em;
 }
 .input-group select {
   margin: 0 -0.625em;
 }
-.stage-appear input,
+.stage-appear input[type='text'],
 .stage-appear select,
-.stage-enter input,
+.stage-enter input[type='text'],
 .stage-enter select,
-.stage-exit-active input,
+.stage-exit-active input[type='text'],
 .stage-exit-active select,
-.stage-enter-done .card-enter input,
+.stage-enter-done .card-enter input[type='text'],
 .stage-enter-done .card-enter select,
-.stage-enter-done .card-exit-active input,
+.stage-enter-done .card-exit-active input[type='text'],
 .stage-enter-done .card-exit-active select {
   background-color: transparent;
   color: transparent;
@@ -34,13 +34,13 @@
     background-color 200ms,
     color 200ms;
 }
-input,
+input[type='text'],
 select,
-.stage-appear-active input,
+.stage-appear-active input[type='text'],
 .stage-appear-active select,
-.stage-enter-active input,
+.stage-enter-active input[type='text'],
 .stage-enter-active select,
-.stage-enter-done .card-enter-active input,
+.stage-enter-done .card-enter-active input[type='text'],
 .stage-enter-done .card-enter-active select {
   background-color: var(--color-background-input);
   color: var(--color-text-input);
@@ -48,7 +48,7 @@ select,
     background-color 400ms 600ms,
     color 400ms 600ms;
 }
-input,
+input[type='text'],
 select {
   width: 100%;
   outline: none;
@@ -56,7 +56,7 @@ select {
   font-family: inherit;
   line-height: inherit;
 }
-input {
+input[type='text'] {
   padding: 0 0.5em;
   font-size: 1em;
 }

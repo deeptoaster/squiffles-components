@@ -21,6 +21,7 @@ export default function Button(
     external = false,
     hidden = false,
     href,
+    isSubmit = false,
     onClick,
     variant = 'default'
   } = props as OtherButtonProps & SpreadableClickableProps;
@@ -46,6 +47,13 @@ export default function Button(
     >
       {children}
     </a>
+  ) : isSubmit ? (
+    <input
+      className={classNames('button', classNameMap)}
+      onClick={onClick}
+      type="submit"
+      value={children as string}
+    />
   ) : (
     <button className={classNames(classNameMap)} onClick={onClick}>
       {children}

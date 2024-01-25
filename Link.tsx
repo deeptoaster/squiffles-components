@@ -9,15 +9,12 @@ export default function Link(props: ClickableProps): JSX.Element {
     children,
     download,
     external = false,
+    isSubmit = false,
     href,
     onClick
   } = props as SpreadableClickableProps;
 
-  return onClick != null ? (
-    <button className="button-link" onClick={onClick}>
-      {children}
-    </button>
-  ) : (
+  return href != null ? (
     <a
       download={download}
       href={href}
@@ -27,5 +24,11 @@ export default function Link(props: ClickableProps): JSX.Element {
     >
       {children}
     </a>
+  ) : isSubmit ? (
+    <input onClick={onClick} type="submit" value={children as string} />
+  ) : (
+    <button className="button-link" onClick={onClick}>
+      {children}
+    </button>
   );
 }

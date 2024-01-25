@@ -132,6 +132,7 @@ button,
   border: 0;
   border-radius: 0.5em;
   padding: 0.5em 1em;
+  font: inherit;
 }
 button + button,
 .button + button,

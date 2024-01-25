@@ -5,10 +5,13 @@ aside.overlay-exit-active {
 }
 aside,
 aside.overlay-enter-active {
-  background-color: rgba(243, 250, 254, 0.5);
+  background-color: var(--color-background-modal);
   color: inherit;
 }
 aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: fixed;
   top: 0;
   right: 0;

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { ChangeEvent, RefObject, useMemo } from 'react';
+import type { ChangeEvent, RefObject } from 'react';
+import { useMemo } from 'react';
 
 import './Input.css';
 
@@ -47,9 +48,12 @@ export default function Input<Value extends number | string>(
           <select id={id} onChange={handleChange} ref={inputRef} value={value}>
             {/* eslint-disable-next-line react/prop-types */}
             {options.map(
-              ({ label, value }: Option<Value>): JSX.Element => (
-                <option key={value} value={value}>
-                  {label}
+              ({
+                label: optionLabel,
+                value: optionValue
+              }: Option<Value>): JSX.Element => (
+                <option key={optionValue} value={optionValue}>
+                  {optionLabel}
                 </option>
               )
             )}

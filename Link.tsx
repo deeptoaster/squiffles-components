@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { ClickableProps, SpreadableClickableProps } from './types';
+import type { ClickableProps, SpreadableClickableProps } from './types';
 
 import './Link.css';
 
@@ -27,7 +27,7 @@ export default function Link(props: ClickableProps): JSX.Element {
   ) : isSubmit ? (
     <input onClick={onClick} type="submit" value={children as string} />
   ) : (
-    <button className="button-link" onClick={onClick}>
+    <button className="button-link" onClick={onClick} type="button">
       {children}
     </button>
   );

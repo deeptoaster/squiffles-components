@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 import classNames from 'classnames';
 
-import { ClickableProps, SpreadableClickableProps } from './types';
+import type { ClickableProps, SpreadableClickableProps } from './types';
 
 import './Button.css';
 
@@ -27,7 +27,7 @@ export default function Button(
   } = props as OtherButtonProps & SpreadableClickableProps;
 
   const classNameMap = useMemo(
-    (): { [className: string]: boolean } => ({
+    (): Record<string, boolean> => ({
       'button-stub': variant === 'add' || variant === 'close',
       'button-symbolic': variant === 'add' || variant === 'close',
       hidden,
@@ -55,7 +55,11 @@ export default function Button(
       value={children as string}
     />
   ) : (
-    <button className={classNames(classNameMap)} onClick={onClick}>
+    <button
+      className={classNames(classNameMap)}
+      onClick={onClick}
+      type="button"
+    >
       {children}
     </button>
   );

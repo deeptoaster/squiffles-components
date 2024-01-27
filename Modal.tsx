@@ -14,9 +14,9 @@ type ModalAction = {
 export default function Modal(props: {
   actions: ReadonlyArray<ModalAction>;
   children: React.ReactNode;
-  visible?: boolean;
+  visible: boolean;
 }): JSX.Element {
-  const { actions, children, visible = true } = props;
+  const { actions, children, visible } = props;
 
   return (
     <TransitionGroup component={null}>

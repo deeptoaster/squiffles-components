@@ -51,6 +51,8 @@ footer.stage-enter-active {
     text-shadow 400ms 600ms;
 }
 footer {
+  display: flex;
+  justify-content: space-between;
   position: absolute;
   bottom: 0;
   right: 0;

@@ -7,7 +7,7 @@ import { ERROR_DURATION, TRANSITION_DURATION } from './defs';
 import './Footer.css';
 
 export default function Footer(props: {
-  children: React.ReactNode;
+  children: [JSX.Element, JSX.Element];
   error: Error | null;
   setError: (error: Error | null) => void;
   visible: boolean;

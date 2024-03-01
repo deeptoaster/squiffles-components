@@ -8,6 +8,7 @@ import type { ClickableProps, SpreadableClickableProps } from './types';
 import './Button.css';
 
 type OtherButtonProps = {
+  disabled?: boolean;
   hidden?: boolean;
   variant?: 'add' | 'close' | 'default' | 'primary' | 'stub';
 };
@@ -17,6 +18,7 @@ export default function Button(
 ): JSX.Element {
   const {
     children,
+    disabled = false,
     download,
     external = false,
     hidden = false,
@@ -30,18 +32,19 @@ export default function Button(
     (): Record<string, boolean> => ({
       'button-stub': variant === 'add' || variant === 'close',
       'button-symbolic': variant === 'add' || variant === 'close',
+      disabled,
       hidden,
       [`button-${variant}`]: variant !== 'default'
     }),
-    [hidden, variant]
+    [hidden, disabled, variant]
   );
 
   return href != null ? (
     <a
       className={classNames('button', classNameMap)}
       download={download}
-      href={href}
-      onClick={onClick}
+      href={disabled ? undefined : href}
+      onClick={disabled ? undefined : onClick}
       rel={external ? 'noopener noreferrer' : undefined}
       target={external ? '_blank' : undefined}
     >
@@ -50,14 +53,16 @@ export default function Button(
   ) : isSubmit ? (
     <input
       className={classNames('button', classNameMap)}
-      onClick={onClick}
+      disabled={disabled}
+      onClick={disabled ? undefined : onClick}
       type="submit"
       value={children as string}
     />
   ) : (
     <button
       className={classNames(classNameMap)}
-      onClick={onClick}
+      disabled={disabled}
+      onClick={disabled ? undefined : onClick}
       type="button"
     >
       {children}

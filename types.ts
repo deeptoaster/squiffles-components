@@ -1,13 +1,9 @@
-import { MouseEvent, ReactNode } from 'react';
+import type { MouseEvent, ReactNode } from 'react';
 
-type ButtonClickableProps = CommonButtonClickableProps &
-  (NonsubmitButtonClickableProps | SubmitButtonClickableProps);
-
-type CommonButtonClickableProps = {
-  readonly onClick?: (event: MouseEvent) => void;
-};
-
-export type ClickableProps = ButtonClickableProps | LinkClickableProps;
+export type ClickableProps =
+  | LinkClickableProps
+  | NonsubmitButtonClickableProps
+  | SubmitButtonClickableProps;
 
 type LinkClickableProps = {
   readonly children?: ReactNode;
@@ -18,15 +14,18 @@ type LinkClickableProps = {
 };
 
 type NonsubmitButtonClickableProps = {
-  readonly children: ReactNode;
+  readonly children?: ReactNode;
   readonly isSubmit?: false;
+  readonly onClick?: (event: MouseEvent) => void;
 };
 
 export type SpreadableClickableProps = Partial<
-  ButtonClickableProps & LinkClickableProps
+  LinkClickableProps &
+    (NonsubmitButtonClickableProps | SubmitButtonClickableProps)
 >;
 
 type SubmitButtonClickableProps = {
-  children: string;
-  isSubmit: true;
+  readonly children: string;
+  readonly isSubmit: true;
+  readonly onClick?: (event: MouseEvent) => void;
 };

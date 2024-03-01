@@ -42,9 +42,9 @@ aside.overlay-exit-active.overlay-exit-active button {
   margin: 1em 0 2em 0;
   text-align: right;
 }
-aside + section {
+aside + * {
   filter: blur(0.5em);
 }
-aside.overlay-exit-active + section {
+aside.overlay-exit-active + * {
   filter: none;
 }

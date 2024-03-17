@@ -36,6 +36,7 @@ button:active:active,
 .stage-enter-done .card-enter-active.card-enter-active .button {
   background-color: var(--color-background-button);
   color: var(--color-text-button);
+  text-shadow: none;
 }
 button.button-primary,
 .button.button-primary,
@@ -168,6 +169,7 @@ button,
   border-radius: 0.5em;
   padding: 0.5em 1em;
   font: inherit;
+  white-space: nowrap;
 }
 button + button,
 .button + button,

@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { useMemo } from 'react';
-
 import classNames from 'classnames';
+import { useMemo } from 'react';
 
 import type { ClickableProps, SpreadableClickableProps } from './types';
 

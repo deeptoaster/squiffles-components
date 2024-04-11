@@ -9,9 +9,6 @@ aside.overlay-enter-active {
   color: inherit;
 }
 aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   position: fixed;
   top: 0;
   right: 0;
@@ -23,6 +20,11 @@ aside {
   transition:
     background-color 300ms,
     color 300ms;
+}
+aside.modal-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 aside.overlay-enter a,
 aside.overlay-enter-active a,
